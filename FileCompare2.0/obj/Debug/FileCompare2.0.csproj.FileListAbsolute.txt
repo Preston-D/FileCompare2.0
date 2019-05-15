@@ -1,0 +1,13 @@
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2._0.Form1.resources
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2._0.Properties.Resources.resources
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2.0.csproj.GenerateResource.cache
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2.0.csproj.CoreCompileInputs.cache
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\bin\Debug\FileCompare2.0.exe.config
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\bin\Debug\FileCompare2.0.exe
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\bin\Debug\FileCompare2.0.pdb
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\bin\Debug\DifferenceEngine.dll
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\bin\Debug\DifferenceEngine.pdb
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2.0.csprojAssemblyReference.cache
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2.0.csproj.CopyComplete
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2.0.exe
+\\fs1\home\duffiep\Desktop\FileCompare2.0\FileCompare2.0\obj\Debug\FileCompare2.0.pdb
