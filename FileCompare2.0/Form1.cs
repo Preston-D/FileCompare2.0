@@ -46,7 +46,7 @@ namespace FileCompare2._0
         private void buttonCompare_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            //progressBarCompare.Maximum = allStudents.studentLength();
+            progressBarCompare.Maximum = allStudents.studentLength();
             for (int i = 0; i < allStudents.studentLength(); i++)
             {
                 Student student1 = allStudents.getStudent(i);
@@ -59,19 +59,20 @@ namespace FileCompare2._0
                         CompareStudentFileType(student1, student2, "css");
                     }
                 }
-                //progressBarCompare.Value++;
+                progressBarCompare.Value++;
+                labelCompare.Text = i.ToString();
 
             }
-            //for (int i = 0; i < allComparisons.length(); i++)
-            //{
-            //    string name1 = allComparisons.getComparison(i).Student1.Name;
-            //    string name2 = allComparisons.getComparison(i).Student2.Name;
-            //    string file1 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
-            //    string file2 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
-            //    string lcs = allComparisons.getComparison(i).diffReport.ToArray().Length.ToString();
-            //    string output = name1 + "'s " + file1 + " compared to " + name2 + "'s " + file2 + " resulted in an lcs of: " + lcs;
-            //    listBoxComparisons.Items.Add(output);
-            //}
+            for (int i = 0; i < allComparisons.length(); i++)
+            {
+                string name1 = allComparisons.getComparison(i).Student1.Name;
+                string name2 = allComparisons.getComparison(i).Student2.Name;
+                string file1 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
+                string file2 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
+                string lcs = allComparisons.getComparison(i).diffReport.ToArray().Length.ToString();
+                string output = name1 + "'s " + file1 + " compared to " + name2 + "'s " + file2 + " resulted in an lcs of: " + lcs;
+                listBoxComparisons.Items.Add(output);
+            }
             this.Cursor = Cursors.Default;
         }
 
