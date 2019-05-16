@@ -41,12 +41,25 @@ namespace FileCompare2._0
                     listBoxDisplayStudents.Items.Add(s.Name);
                 }
                 buttonGetFiles.Enabled = false;
+                outputError("Files Search Complete");
             }
         }
         private void buttonCompare_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
             progressBarCompare.Maximum = allStudents.studentLength();
+            if (radioButtonSlow.Checked)
+            {
+                _level = DiffEngineLevel.SlowPerfect;
+            }
+            else if (radioButtonMedium.Checked)
+            {
+                _level = DiffEngineLevel.Medium;
+            }
+            else
+            {
+                _level = DiffEngineLevel.FastImperfect;
+            }
             for (int i = 0; i < allStudents.studentLength(); i++)
             {
                 Student student1 = allStudents.getStudent(i);
@@ -60,20 +73,44 @@ namespace FileCompare2._0
                     }
                 }
                 progressBarCompare.Value++;
-                labelCompare.Text = i.ToString();
+                labelCompare.Text = (i+1).ToString();
 
             }
-            for (int i = 0; i < allComparisons.length(); i++)
-            {
-                string name1 = allComparisons.getComparison(i).Student1.Name;
-                string name2 = allComparisons.getComparison(i).Student2.Name;
-                string file1 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
-                string file2 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
-                string lcs = allComparisons.getComparison(i).diffReport.ToArray().Length.ToString();
-                string output = name1 + "'s " + file1 + " compared to " + name2 + "'s " + file2 + " resulted in an lcs of: " + lcs;
-                listBoxComparisons.Items.Add(output);
-            }
+            populateComparisonDisplay();
             this.Cursor = Cursors.Default;
+            outputError("Comparisons Complete");
+            buttonCompare.Enabled = false;
+        }
+        private void buttonCompareRefresh_Click(object sender, EventArgs e)
+        {
+            populateComparisonDisplay();
+        }
+        private void buttonOpenDiffForm_Click(object sender, EventArgs e)
+        {
+            string selectedComparison = listBoxComparisons.SelectedItem.ToString();
+            outputError(selectedComparison + "opened new result form");
+            string[] selectedComparisonArr = selectedComparison.Split('-');
+            Student s1 = allStudents.getStudent(selectedComparisonArr[0]);
+            Student s2 = allStudents.getStudent(selectedComparisonArr[1]);
+            string file = selectedComparisonArr[2];
+
+            Comparison comp = allComparisons.getComparison(file, s1, s2);
+
+            outputError(comp.File1);
+            DiffList_TextFile sLF = null;
+            DiffList_TextFile dLF = null;
+            try
+            {
+                sLF = new DiffList_TextFile(comp.File1);
+                dLF = new DiffList_TextFile(comp.File2);
+            }
+            catch
+            {
+                outputError("Error with files while opening diff form");
+            }
+            Results dlg = new Results(sLF, dLF, comp.diffReport, comp.diffTime);
+            dlg.ShowDialog();
+            dlg.Dispose();
         }
 
         //File Search Functions
@@ -199,6 +236,37 @@ namespace FileCompare2._0
         {
             richTextBoxOutput.Text += "\n" + err;
         }
+
+        private void populateComparisonDisplay()
+        {
+            listBoxComparisons.Items.Clear();
+            numericUpDownComparisons.Maximum = allComparisons.length();
+            bool html = checkBoxCompHTML.Checked;
+            bool css = checkBoxCompCSS.Checked;
+            bool etc = checkBoxCompETC.Checked;
+            bool showAll = checkBoxCompShowAll.Checked;
+            bool showX = checkBoxShowX.Checked;
+            decimal top = numericUpDownComparisons.Value;
+
+
+
+            for (int i = 0; i < allComparisons.length(); i++)
+            {
+                string name1 = allComparisons.getComparison(i).Student1.Name;
+                string name2 = allComparisons.getComparison(i).Student2.Name;
+                string file1 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
+                string file2 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
+                string lcs = allComparisons.getComparison(i).diffReport.ToArray().Length.ToString();
+                string output = name1 + "-" + name2 + "-" + file1 + "-" + lcs;
+                bool isHtml = System.IO.Path.GetExtension(file1).Equals(".html");
+                bool isCss = System.IO.Path.GetExtension(file1).Equals(".css");
+                if (showAll || (css && isCss) || (html && isHtml))
+                {
+                    listBoxComparisons.Items.Add(output);
+                }
+            }
+        }
+
 
     }
 }

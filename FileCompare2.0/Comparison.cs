@@ -60,7 +60,7 @@ namespace FileCompare2._0
             }
             catch
             {
-                Console.WriteLine("{0} is not a valid index for students.", index);
+                Console.WriteLine("{0} is not a valid index for comparisons.", index);
                 return null;
             }
         }
@@ -70,6 +70,21 @@ namespace FileCompare2._0
             for (int i = 0; i < AllComparisons.Length; i++)
             {
                 if (AllComparisons[i] == s)
+                {
+                    return AllComparisons[i];
+                }
+            }
+            return null;
+        }
+
+        public Comparison getComparison(string file1, Student s1, Student s2)
+        {
+            for (int i = 0; i < AllComparisons.Length; i++)
+            {
+                bool isfile1 = (file1.Equals(System.IO.Path.GetFileName(AllComparisons[i].File1)));
+                bool isS1 = (s1.Equals(AllComparisons[i].Student1));
+                bool isS2 = (s2.Equals(AllComparisons[i].Student2));
+                if (isfile1 && isS1 && isS2)
                 {
                     return AllComparisons[i];
                 }
