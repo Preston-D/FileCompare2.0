@@ -248,21 +248,57 @@ namespace FileCompare2._0
             bool showX = checkBoxShowX.Checked;
             decimal top = numericUpDownComparisons.Value;
 
-
-
+            float comparisonAverage = 0;
             for (int i = 0; i < allComparisons.length(); i++)
             {
-                string name1 = allComparisons.getComparison(i).Student1.Name;
-                string name2 = allComparisons.getComparison(i).Student2.Name;
-                string file1 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
-                string file2 = System.IO.Path.GetFileName(allComparisons.getComparison(i).File1);
-                string lcs = allComparisons.getComparison(i).diffReport.ToArray().Length.ToString();
+                Comparison cur = allComparisons.getComparison(i);
+                string name1 = cur.Student1.Name;
+                string name2 = cur.Student2.Name;
+                string file1 = System.IO.Path.GetFileName(cur.File1);
+                string file2 = System.IO.Path.GetFileName(cur.File1);
+                string lcs = cur.diffReport.ToArray().Length.ToString();
                 string output = name1 + "-" + name2 + "-" + file1 + "-" + lcs;
                 bool isHtml = System.IO.Path.GetExtension(file1).Equals(".html");
                 bool isCss = System.IO.Path.GetExtension(file1).Equals(".css");
                 if (showAll || (css && isCss) || (html && isHtml))
                 {
                     listBoxComparisons.Items.Add(output);
+                }
+                comparisonAverage += cur.diffReport.ToArray().Length;
+            } 
+            comparisonAverage = comparisonAverage / allComparisons.length();
+
+            if (showX)
+            {
+                Queue<Comparison> TopQueue = new Queue<Comparison>();
+                float high = 0;
+                float comparisonLen = comparisonAverage;
+                for (int i = 0; i < allComparisons.length(); i++)
+                {
+                    Comparison cur = allComparisons.getComparison(i);
+                    comparisonLen = cur.diffReport.ToArray().Length;
+                    if (comparisonLen > high)
+                    {
+                        high = comparisonLen;
+                        TopQueue.Enqueue(cur);
+                        if(TopQueue.Count > top)
+                        {
+                            TopQueue.Dequeue();
+                        }
+                    }
+
+                }
+
+                while(TopQueue.Count > 0)
+                {
+                    Comparison cur = TopQueue.Dequeue();
+                    string name1 = cur.Student1.Name;
+                    string name2 = cur.Student2.Name;
+                    string file1 = System.IO.Path.GetFileName(cur.File1);
+                    string file2 = System.IO.Path.GetFileName(cur.File1);
+                    string lcs = cur.diffReport.ToArray().Length.ToString();
+                    string output = name1 + "-" + name2 + "-" + file1 + "-" + lcs;
+                    listBoxComparisons.Items.Insert(0, output);
                 }
             }
         }
