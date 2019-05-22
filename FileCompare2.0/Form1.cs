@@ -249,6 +249,8 @@ namespace FileCompare2._0
             decimal top = numericUpDownComparisons.Value;
 
             float comparisonAverage = 0;
+            float largestComparison = 0;
+
             for (int i = 0; i < allComparisons.length(); i++)
             {
                 Comparison cur = allComparisons.getComparison(i);
@@ -265,19 +267,23 @@ namespace FileCompare2._0
                     listBoxComparisons.Items.Add(output);
                 }
                 comparisonAverage += cur.diffReport.ToArray().Length;
+                if(cur.diffReport.ToArray().Length > largestComparison)
+                {
+                    largestComparison = cur.diffReport.ToArray().Length;
+                }
             } 
             comparisonAverage = comparisonAverage / allComparisons.length();
 
             if (showX)
             {
                 Queue<Comparison> TopQueue = new Queue<Comparison>();
-                float high = 0;
-                float comparisonLen = comparisonAverage;
+                float high = largestComparison;
+                float comparisonLen;
                 for (int i = 0; i < allComparisons.length(); i++)
                 {
                     Comparison cur = allComparisons.getComparison(i);
                     comparisonLen = cur.diffReport.ToArray().Length;
-                    if (comparisonLen > high)
+                    if (comparisonLen <= high)
                     {
                         high = comparisonLen;
                         TopQueue.Enqueue(cur);

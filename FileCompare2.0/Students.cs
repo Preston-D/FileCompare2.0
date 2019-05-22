@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +11,13 @@ namespace FileCompare2._0
     {
         public Students() { }
 
-        public static Student[] AllStudents = new Student[10];
+        public static ArrayList AllStudents = new ArrayList();
+        //public static Student[] AllStudents = new Student[10];
         public static int currentIndex = 0;
 
         public void addStudent(Student s)
         {
-            AllStudents[currentIndex] = s;
-            currentIndex++;
-            if (currentIndex > AllStudents.Length)
-            {
-                //TODO increase array size
-            }
+            AllStudents.Add(s);
         }
 
         public void deleteStudent(Student s)
@@ -32,7 +29,7 @@ namespace FileCompare2._0
         {
             try
             {
-                return AllStudents[index];
+                return (Student)AllStudents[index];
             }
             catch
             {
@@ -43,11 +40,11 @@ namespace FileCompare2._0
 
         public Student getStudent(Student s)
         {
-            for (int i = 0; i < AllStudents.Length; i++)
+            for (int i = 0; i < AllStudents.Count; i++)
             {
                 if (AllStudents[i] == s)
                 {
-                    return AllStudents[i];
+                    return (Student)AllStudents[i];
                 }
             }
             return null;
@@ -55,11 +52,12 @@ namespace FileCompare2._0
 
         public Student getStudent(string name)
         {
-            for (int i = 0; i < AllStudents.Length; i++)
+            for (int i = 0; i < AllStudents.Count; i++)
             {
-                if (AllStudents[i].Name == name)
+                Student s = (Student)AllStudents[i];
+                if (s.Name == name)
                 {
-                    return AllStudents[i];
+                    return s;
                 }
             }
             return null;
@@ -67,19 +65,14 @@ namespace FileCompare2._0
 
         public int studentLength()
         {
-            int index = 0;
-            while (AllStudents[index] != null)
-            {
-                index++;
-            }
-            return index;
+            return AllStudents.Count;
         }
 
         public int getIndex(Student s)
         {
-            for (int i = 0; i < AllStudents.Length; i++)
+            for (int i = 0; i < AllStudents.Count; i++)
             {
-                if (AllStudents[i] == s)
+                if ((Student)AllStudents[i] == s)
                 {
                     return i;
                 }

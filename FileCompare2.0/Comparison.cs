@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace FileCompare2._0
 
         public Comparison() { }
 
-        public Comparison(string file1, string file2, Student student1, Student student2, int longestCommonSubsequence, double time, System.Collections.ArrayList report)
+        public Comparison(string file1, string file2, Student student1, Student student2, int longestCommonSubsequence, double time, ArrayList report)
         {
             File1 = file1;
             File2 = file2;
@@ -34,17 +35,13 @@ namespace FileCompare2._0
     {
         public Comparisons() { }
 
-        public static Comparison[] AllComparisons = new Comparison[100];
+        //public static Comparison[] AllComparisons = new Comparison[100];
+        public static ArrayList AllComparisons = new ArrayList();
         public static int currentIndex = 0;
 
         public void addComparison(Comparison s)
         {
-            AllComparisons[currentIndex] = s;
-            currentIndex++;
-            if (currentIndex > AllComparisons.Length)
-            {
-                //TODO increase array size
-            }
+            AllComparisons.Add(s);
         }
 
         public void deleteComparison(Comparison s)
@@ -56,7 +53,7 @@ namespace FileCompare2._0
         {
             try
             {
-                return AllComparisons[index];
+                return (Comparison)AllComparisons[index];
             }
             catch
             {
@@ -67,11 +64,11 @@ namespace FileCompare2._0
 
         public Comparison getComparison(Comparison s)
         {
-            for (int i = 0; i < AllComparisons.Length; i++)
+            for (int i = 0; i < AllComparisons.Count; i++)
             {
-                if (AllComparisons[i] == s)
+                if ((Comparison)AllComparisons[i] == s)
                 {
-                    return AllComparisons[i];
+                    return (Comparison)AllComparisons[i];
                 }
             }
             return null;
@@ -79,14 +76,15 @@ namespace FileCompare2._0
 
         public Comparison getComparison(string file1, Student s1, Student s2)
         {
-            for (int i = 0; i < AllComparisons.Length; i++)
+            for (int i = 0; i < AllComparisons.Count; i++)
             {
-                bool isfile1 = (file1.Equals(System.IO.Path.GetFileName(AllComparisons[i].File1)));
-                bool isS1 = (s1.Equals(AllComparisons[i].Student1));
-                bool isS2 = (s2.Equals(AllComparisons[i].Student2));
+                Comparison c = (Comparison)AllComparisons[i];
+                bool isfile1 = (file1.Equals(System.IO.Path.GetFileName(c.File1)));
+                bool isS1 = (s1.Equals(c.Student1));
+                bool isS2 = (s2.Equals(c.Student2));
                 if (isfile1 && isS1 && isS2)
                 {
-                    return AllComparisons[i];
+                    return c;
                 }
             }
             return null;
@@ -106,19 +104,14 @@ namespace FileCompare2._0
 
         public int length()
         {
-            int index = 0;
-            while (AllComparisons[index] != null)
-            {
-                index++;
-            }
-            return index;
+            return AllComparisons.Count;
         }
 
         public int getIndex(Comparison s)
         {
-            for (int i = 0; i < AllComparisons.Length; i++)
+            for (int i = 0; i < AllComparisons.Count; i++)
             {
-                if (AllComparisons[i] == s)
+                if ((Comparison)AllComparisons[i] == s)
                 {
                     return i;
                 }

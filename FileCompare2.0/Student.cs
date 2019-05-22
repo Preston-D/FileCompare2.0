@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,14 @@ namespace FileCompare2._0
 {
     public class Student
     {
-        const int MAX_FILE_ARRAY_SIZE = 20;
-        private string[] htmlFiles = new string[MAX_FILE_ARRAY_SIZE];
-        private string[] cssFiles = new string[MAX_FILE_ARRAY_SIZE];
-        private string[] etcFiles = new string[MAX_FILE_ARRAY_SIZE];
+        //const int MAX_FILE_ARRAY_SIZE = 20;
+        private ArrayList htmlFiles = new ArrayList();
+        private ArrayList cssFiles = new ArrayList();
+        private ArrayList etcFiles = new ArrayList();
+        //private string[] htmlFiles = new string[MAX_FILE_ARRAY_SIZE];
+        //private string[] cssFiles = new string[MAX_FILE_ARRAY_SIZE];
+        //private string[] etcFiles = new string[MAX_FILE_ARRAY_SIZE];
+
 
         public Student() { }
 
@@ -39,14 +44,17 @@ namespace FileCompare2._0
 
         public string getFile(int index, string location)
         {
+            string[] htmlFilesarr = (string[])htmlFiles.ToArray(typeof(string));
+            string[] cssFilesarr = (string[])cssFiles.ToArray(typeof(string));
+            string[] etcFilesarr = (string[])etcFiles.ToArray(typeof(string));
             switch (location)
             {
                 case "html":
-                    return htmlFiles[index];
+                    return htmlFilesarr[index];
                 case "css":
-                    return cssFiles[index];
+                    return cssFilesarr[index];
                 case "etc":
-                    return etcFiles[index];
+                    return etcFilesarr[index];
             }
             return null;
         }
@@ -66,23 +74,13 @@ namespace FileCompare2._0
 
         }
 
-        private void addToArray(string file, string[] arr)
+        private void addToArray(string file, ArrayList arr)
         {
-            int i = 0;
-            while (arr[i] != null)
-            {
-                i++;
-            }
-            arr[i] = file;
+            arr.Add(file);
         }
-        private int arrayLength(string[] arr)
+        private int arrayLength(ArrayList arr)
         {
-            int index = 0;
-            while (arr[index] != null)
-            {
-                index++;
-            }
-            return index;
+            return arr.Count;
         }
     }
 }

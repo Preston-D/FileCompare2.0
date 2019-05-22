@@ -93,7 +93,7 @@
             this.tabControl1.Controls.Add(this.tabPageCompare);
             this.tabControl1.Controls.Add(this.tabPageAbout);
             this.tabControl1.Location = new System.Drawing.Point(7, 8);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(676, 426);
@@ -107,9 +107,9 @@
             this.tabPageGetFiles.Controls.Add(this.groupBox1);
             this.tabPageGetFiles.Controls.Add(this.label2);
             this.tabPageGetFiles.Location = new System.Drawing.Point(4, 22);
-            this.tabPageGetFiles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageGetFiles.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageGetFiles.Name = "tabPageGetFiles";
-            this.tabPageGetFiles.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageGetFiles.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageGetFiles.Size = new System.Drawing.Size(668, 400);
             this.tabPageGetFiles.TabIndex = 0;
             this.tabPageGetFiles.Text = "Get Files";
@@ -118,9 +118,9 @@
             // 
             this.groupBox3.Controls.Add(this.richTextBoxOutput);
             this.groupBox3.Location = new System.Drawing.Point(4, 206);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(660, 190);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -129,7 +129,7 @@
             // richTextBoxOutput
             // 
             this.richTextBoxOutput.Location = new System.Drawing.Point(5, 17);
-            this.richTextBoxOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxOutput.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.Size = new System.Drawing.Size(651, 169);
             this.richTextBoxOutput.TabIndex = 0;
@@ -142,9 +142,9 @@
             this.groupBox2.Controls.Add(this.buttonCompare);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Location = new System.Drawing.Point(351, 34);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(309, 168);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
@@ -161,16 +161,16 @@
             // 
             // progressBarCompare
             // 
-            this.progressBarCompare.Location = new System.Drawing.Point(4, 149);
-            this.progressBarCompare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBarCompare.Location = new System.Drawing.Point(4, 145);
+            this.progressBarCompare.Margin = new System.Windows.Forms.Padding(2);
             this.progressBarCompare.Name = "progressBarCompare";
-            this.progressBarCompare.Size = new System.Drawing.Size(338, 15);
+            this.progressBarCompare.Size = new System.Drawing.Size(301, 19);
             this.progressBarCompare.TabIndex = 5;
             // 
             // buttonCompare
             // 
             this.buttonCompare.Location = new System.Drawing.Point(8, 92);
-            this.buttonCompare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCompare.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCompare.Name = "buttonCompare";
             this.buttonCompare.Size = new System.Drawing.Size(93, 26);
             this.buttonCompare.TabIndex = 4;
@@ -184,9 +184,9 @@
             this.groupBox4.Controls.Add(this.radioButtonMedium);
             this.groupBox4.Controls.Add(this.radioButtonSlow);
             this.groupBox4.Location = new System.Drawing.Point(4, 13);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(151, 75);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
@@ -196,7 +196,7 @@
             // 
             this.radioButtonFast.AutoSize = true;
             this.radioButtonFast.Location = new System.Drawing.Point(4, 43);
-            this.radioButtonFast.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonFast.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonFast.Name = "radioButtonFast";
             this.radioButtonFast.Size = new System.Drawing.Size(131, 17);
             this.radioButtonFast.TabIndex = 2;
@@ -207,7 +207,7 @@
             // 
             this.radioButtonMedium.AutoSize = true;
             this.radioButtonMedium.Location = new System.Drawing.Point(4, 28);
-            this.radioButtonMedium.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonMedium.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonMedium.Name = "radioButtonMedium";
             this.radioButtonMedium.Size = new System.Drawing.Size(137, 17);
             this.radioButtonMedium.TabIndex = 1;
@@ -219,7 +219,7 @@
             this.radioButtonSlow.AutoSize = true;
             this.radioButtonSlow.Checked = true;
             this.radioButtonSlow.Location = new System.Drawing.Point(4, 13);
-            this.radioButtonSlow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonSlow.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonSlow.Name = "radioButtonSlow";
             this.radioButtonSlow.Size = new System.Drawing.Size(136, 17);
             this.radioButtonSlow.TabIndex = 0;
@@ -233,9 +233,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxFilePath);
             this.groupBox1.Location = new System.Drawing.Point(5, 34);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(342, 168);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -244,7 +244,7 @@
             // buttonGetFiles
             // 
             this.buttonGetFiles.Location = new System.Drawing.Point(78, 51);
-            this.buttonGetFiles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGetFiles.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGetFiles.Name = "buttonGetFiles";
             this.buttonGetFiles.Size = new System.Drawing.Size(93, 26);
             this.buttonGetFiles.TabIndex = 3;
@@ -265,7 +265,7 @@
             // textBoxFilePath
             // 
             this.textBoxFilePath.Location = new System.Drawing.Point(78, 22);
-            this.textBoxFilePath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxFilePath.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFilePath.Name = "textBoxFilePath";
             this.textBoxFilePath.Size = new System.Drawing.Size(260, 20);
             this.textBoxFilePath.TabIndex = 1;
@@ -287,9 +287,9 @@
             this.tabPageStudents.Controls.Add(this.listBoxDisplayStudents);
             this.tabPageStudents.Controls.Add(this.label1);
             this.tabPageStudents.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageStudents.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageStudents.Name = "tabPageStudents";
-            this.tabPageStudents.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageStudents.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageStudents.Size = new System.Drawing.Size(668, 400);
             this.tabPageStudents.TabIndex = 1;
             this.tabPageStudents.Text = "Students";
@@ -298,7 +298,7 @@
             // 
             this.listBoxDisplayStudents.FormattingEnabled = true;
             this.listBoxDisplayStudents.Location = new System.Drawing.Point(5, 34);
-            this.listBoxDisplayStudents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxDisplayStudents.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxDisplayStudents.Name = "listBoxDisplayStudents";
             this.listBoxDisplayStudents.Size = new System.Drawing.Size(251, 355);
             this.listBoxDisplayStudents.TabIndex = 2;
@@ -322,9 +322,9 @@
             this.tabPageCompare.Controls.Add(this.listBoxComparisons);
             this.tabPageCompare.Controls.Add(this.label4);
             this.tabPageCompare.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCompare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageCompare.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageCompare.Name = "tabPageCompare";
-            this.tabPageCompare.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageCompare.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageCompare.Size = new System.Drawing.Size(668, 400);
             this.tabPageCompare.TabIndex = 2;
             this.tabPageCompare.Text = "Comparisons";
@@ -338,9 +338,9 @@
             this.groupBox6.Controls.Add(this.labelStudent2);
             this.groupBox6.Controls.Add(this.labelStudent1);
             this.groupBox6.Location = new System.Drawing.Point(454, 34);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(214, 209);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
@@ -349,7 +349,7 @@
             // buttonOpenDiffForm
             // 
             this.buttonOpenDiffForm.Location = new System.Drawing.Point(4, 179);
-            this.buttonOpenDiffForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonOpenDiffForm.Margin = new System.Windows.Forms.Padding(2);
             this.buttonOpenDiffForm.Name = "buttonOpenDiffForm";
             this.buttonOpenDiffForm.Size = new System.Drawing.Size(93, 26);
             this.buttonOpenDiffForm.TabIndex = 5;
@@ -417,9 +417,9 @@
             this.groupBox5.Controls.Add(this.numericUpDownComparisons);
             this.groupBox5.Controls.Add(this.checkBoxShowX);
             this.groupBox5.Location = new System.Drawing.Point(260, 34);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(194, 209);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
@@ -428,7 +428,7 @@
             // buttonCompareRefresh
             // 
             this.buttonCompareRefresh.Location = new System.Drawing.Point(4, 179);
-            this.buttonCompareRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCompareRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCompareRefresh.Name = "buttonCompareRefresh";
             this.buttonCompareRefresh.Size = new System.Drawing.Size(93, 26);
             this.buttonCompareRefresh.TabIndex = 6;
@@ -442,7 +442,7 @@
             this.checkBoxCompShowAll.Checked = true;
             this.checkBoxCompShowAll.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCompShowAll.Location = new System.Drawing.Point(3, 104);
-            this.checkBoxCompShowAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxCompShowAll.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxCompShowAll.Name = "checkBoxCompShowAll";
             this.checkBoxCompShowAll.Size = new System.Drawing.Size(67, 17);
             this.checkBoxCompShowAll.TabIndex = 5;
@@ -453,7 +453,7 @@
             // 
             this.checkBoxCompETC.AutoSize = true;
             this.checkBoxCompETC.Location = new System.Drawing.Point(3, 77);
-            this.checkBoxCompETC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxCompETC.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxCompETC.Name = "checkBoxCompETC";
             this.checkBoxCompETC.Size = new System.Drawing.Size(85, 17);
             this.checkBoxCompETC.TabIndex = 4;
@@ -466,7 +466,7 @@
             this.checkBoxCompCSS.Checked = true;
             this.checkBoxCompCSS.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCompCSS.Location = new System.Drawing.Point(3, 50);
-            this.checkBoxCompCSS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxCompCSS.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxCompCSS.Name = "checkBoxCompCSS";
             this.checkBoxCompCSS.Size = new System.Drawing.Size(85, 17);
             this.checkBoxCompCSS.TabIndex = 3;
@@ -479,7 +479,7 @@
             this.checkBoxCompHTML.Checked = true;
             this.checkBoxCompHTML.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxCompHTML.Location = new System.Drawing.Point(3, 23);
-            this.checkBoxCompHTML.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxCompHTML.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxCompHTML.Name = "checkBoxCompHTML";
             this.checkBoxCompHTML.Size = new System.Drawing.Size(94, 17);
             this.checkBoxCompHTML.TabIndex = 2;
@@ -489,7 +489,7 @@
             // numericUpDownComparisons
             // 
             this.numericUpDownComparisons.Location = new System.Drawing.Point(77, 130);
-            this.numericUpDownComparisons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDownComparisons.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownComparisons.Name = "numericUpDownComparisons";
             this.numericUpDownComparisons.Size = new System.Drawing.Size(40, 20);
             this.numericUpDownComparisons.TabIndex = 1;
@@ -503,7 +503,7 @@
             // 
             this.checkBoxShowX.AutoSize = true;
             this.checkBoxShowX.Location = new System.Drawing.Point(3, 131);
-            this.checkBoxShowX.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxShowX.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxShowX.Name = "checkBoxShowX";
             this.checkBoxShowX.Size = new System.Drawing.Size(186, 17);
             this.checkBoxShowX.TabIndex = 0;
@@ -514,7 +514,7 @@
             // 
             this.listBoxComparisons.FormattingEnabled = true;
             this.listBoxComparisons.Location = new System.Drawing.Point(5, 34);
-            this.listBoxComparisons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxComparisons.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxComparisons.Name = "listBoxComparisons";
             this.listBoxComparisons.Size = new System.Drawing.Size(251, 355);
             this.listBoxComparisons.TabIndex = 3;
@@ -539,9 +539,9 @@
             this.tabPageAbout.Controls.Add(this.label6);
             this.tabPageAbout.Controls.Add(this.label5);
             this.tabPageAbout.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAbout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageAbout.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageAbout.Name = "tabPageAbout";
-            this.tabPageAbout.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageAbout.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageAbout.Size = new System.Drawing.Size(668, 400);
             this.tabPageAbout.TabIndex = 3;
             this.tabPageAbout.Text = "About";
@@ -606,7 +606,7 @@
             this.ClientSize = new System.Drawing.Size(687, 437);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "File Compare 2";
             this.tabControl1.ResumeLayout(false);
