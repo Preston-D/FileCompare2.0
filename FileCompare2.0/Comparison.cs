@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DifferenceEngine;
 
 namespace FileCompare2._0
 {
@@ -21,6 +22,8 @@ namespace FileCompare2._0
             Lcs = longestCommonSubsequence;
             diffTime = time;
             diffReport = report;
+
+            calculateTotalDiffReportLengths();
         }
         public string File1 { get; }
         public string File2 { get; }
@@ -28,15 +31,57 @@ namespace FileCompare2._0
         public Student Student2 { get; }
         public int Lcs { get; }
         public double diffTime { get; }
-        public System.Collections.ArrayList diffReport { get; }
-    }
+        public ArrayList diffReport { get; }
 
+        //total length of diffreport changes;
+        public int deleteLength { get; set; }
+        public int noChangeLength { get; set; }
+        public int addDestinationLength { get; set; }
+        public int replaceLength { get; set; }
+
+        private void calculateTotalDiffReportLengths()
+        {
+            deleteLength = 0;
+            noChangeLength = 0;
+            addDestinationLength = 0;
+            replaceLength = 0;
+
+            foreach (DiffResultSpan drs in diffReport)
+            {
+                switch (drs.Status)
+                {
+                    case DiffResultSpanStatus.DeleteSource:
+                        deleteLength += drs.Length;
+                        break;
+                    case DiffResultSpanStatus.NoChange:
+                        noChangeLength += drs.Length;
+                        break;
+                    case DiffResultSpanStatus.AddDestination:
+                        addDestinationLength += drs.Length;
+                        break;
+                    case DiffResultSpanStatus.Replace:
+                        replaceLength += drs.Length;
+                        break;
+                }
+            }
+
+
+        }
+
+    }
+    /// <summary>
+    /// ////////////////////////////////////////////////
+    /// </summary>
     public class Comparisons
     {
         public Comparisons() { }
 
         //public static Comparison[] AllComparisons = new Comparison[100];
         public static ArrayList AllComparisons = new ArrayList();
+        public static ArrayList AllComparisonsSortedByNoChangeLength = new ArrayList();
+        public static ArrayList AllComparisonsSortedByDeleteSourceLength = new ArrayList();
+        public static ArrayList AllComparisonsSortedByAddDestinationLength = new ArrayList();
+        public static ArrayList AllComparisonsSortedByReplaceLength = new ArrayList();
         public static int currentIndex = 0;
 
         public void addComparison(Comparison s)
@@ -117,6 +162,12 @@ namespace FileCompare2._0
                 }
             }
             return -1;
+        }
+
+        private ArrayList sortedBy(string catagory)
+        {
+            //TODO!!!!!!!!!!
+            return new ArrayList();
         }
     }
 }

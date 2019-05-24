@@ -282,16 +282,21 @@ namespace FileCompare2._0
                 for (int i = 0; i < allComparisons.length(); i++)
                 {
                     Comparison cur = allComparisons.getComparison(i);
-                    comparisonLen = cur.diffReport.ToArray().Length;
-                    if (comparisonLen <= high)
-                    {
-                        high = comparisonLen;
-                        TopQueue.Enqueue(cur);
-                        if(TopQueue.Count > top)
-                        {
-                            TopQueue.Dequeue();
-                        }
-                    }
+                    int deleteLen = cur.deleteLength;
+                    int nochangeLen = cur.noChangeLength;
+                    int addDestinationLen = cur.addDestinationLength;
+                    int replaceLen = cur.replaceLength;
+                    
+
+                    //if (comparisonLen <= high)
+                    //{
+                    //    high = comparisonLen;
+                    //    TopQueue.Enqueue(cur);
+                    //    if(TopQueue.Count > top)
+                    //    {
+                    //        TopQueue.Dequeue();
+                    //    }
+                    //}
 
                 }
 

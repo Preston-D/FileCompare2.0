@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileCompare2.0.exe" size="33248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileCompare2.0.exe" size="34272">
       <assemblyIdentity name="FileCompare2.0" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YPpcKdfolAlCrVBTGCgNAQ0cBsXpmfXhfvKxwfKjhCc=</dsig:DigestValue>
+        <dsig:DigestValue>EkefFNjQgT9RxgOaR4ToX8OgVkkYVqcPtSDo5Jh0TKA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
